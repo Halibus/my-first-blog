@@ -1,5 +1,0 @@
-Username:	tnogneng
-Email address:	tnogneng@example.com
-Password:	tnognengtnogneng
-Password (again):
-Superuser created successfully.
