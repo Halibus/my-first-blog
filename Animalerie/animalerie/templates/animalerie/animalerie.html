@@ -1,0 +1,78 @@
+{% extends 'animalerie/base.html' %}
+
+{% block content %}
+    <div class="card">
+        <h2 class="card-header darkseagreen text-white">Déplacement</h2>
+        <form method="GET">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <label for="animal">Animal :</label>
+                        <select id="animal" name="animal" class="form-control" required>
+                                <option></option>
+                            {% for animal in animaux  %}
+                                <option value="{{ animal }}">{{ animal }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="col-md-6 form-group">
+                        <label for="equipement">Equipement :</label>
+                        <select id="equipement" name="equipement" class="form-control" required>
+                                <option></option>
+                            {% for equipement in equipements  %}
+                                <option value="{{ equipement }}">{{ equipement | capfirst }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="card-footer footer-right">
+                    <button type="submit" class="btn darkseagreen text-white">Déplacer</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <h1 class="text-grain">Equipements</h1>
+    <div class="row">
+        {% for equipement in equipements %}
+            <div class="col-md-3">
+                <div class="card">
+                    <h2 class="card-header grain">
+                        <a class="text-white" href="{% url 'equipement_detail' id_equip=equipement.id_equip %}">
+                            {{ equipement.id_equip | capfirst }}
+                        </a>
+                    </h2>
+                    <div class="card-body">
+                        <a class="text-white" href="{% url 'equipement_detail' id_equip=equipement.id_equip %}">
+                            <img src="{{ equipement.photo }}" alt="" width="100%"/>
+                        </a>
+                        <p class="card-text center">Disponibilité : {{ equipement.disponibilite }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <h1 class="text-brick">Animaux</h1>
+    <div class="row">
+        {% for animal in animaux %}
+            <div class="col-md-4">
+                <div class="card">
+                    <h2 class="card-header brick">
+                        <a class="text-white" href="{% url 'animal_detail' id_animal=animal.id_animal %}">
+                            {{ animal.id_animal }}
+                        </a>
+                    </h2>
+
+                    <div class="card-body">
+                        <a class="text-white" href="{% url 'animal_detail' id_animal=animal.id_animal %}">
+                            <img src="{{ animal.photo }}" alt="" width="100%"/>
+                        </a>
+                        <p class="card-text center">Etat : {{ animal.etat }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

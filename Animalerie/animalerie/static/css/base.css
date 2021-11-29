@@ -1,0 +1,73 @@
+body {
+    background-image: url('http://images6.fanpop.com/image/photos/36700000/How-to-Train-Your-Dragon-image-how-to-train-your-dragon-36749026-1920-1200.jpg'); background-size: cover;
+    font-family: 'Indie Flower';
+    text-align: center;
+}
+
+.header {
+    padding: 20px;
+}
+
+.ore {
+    background-color: #876441;
+}
+
+.text-white {
+    color: white;
+}
+
+.text-black {
+    color: black;
+}
+
+.brick {
+    background-color: #d77837;
+}
+
+.text-brick {
+    color: #d77837;
+}
+
+.grain {
+    background-color: #f0dc5a;
+}
+
+.text-grain {
+    color: #f0dc5a;
+}
+
+.darkseagreen {
+    background-color: #9baa5a;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.align-right {
+    float: right;
+}
+
+.content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.card {
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.card-header {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.center {
+    text-align: center;
+}
